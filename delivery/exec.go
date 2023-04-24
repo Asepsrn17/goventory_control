@@ -11,9 +11,11 @@ func Exec() {
 	r := gin.Default()
 	db := config.ConnectDB()
 
-	router.LoginExampleRoutes(r, db)
-	router.ProducStRoutes(r, db)
-	router.TrxStRoutes(r, db)
+	// router.LoginExampleRoutes(r, db)
+	// router.ProducStRoutes(r, db)
+	// router.TrxStRoutes(r, db)
+	//router.InitRouterEmployee(r, db)
+	router.InitRouterProduct(r, db)
 
-	r.Run(":7000")
+	r.Run(":8080")
 }
