@@ -9,13 +9,16 @@ import (
 
 func Exec() {
 	r := gin.Default()
-	db := config.ConnectDB()
-
+	db, err := config.ConnectDB()
+	if err != nil {
+		panic(err)
+	}
 	// router.LoginExampleRoutes(r, db)
 	// router.ProducStRoutes(r, db)
 	// router.TrxStRoutes(r, db)
 	//router.InitRouterEmployee(r, db)
 	router.InitRouterProduct(r, db)
+	router.RouterAdminIc(r, db)
 
 	r.Run(":8080")
 }

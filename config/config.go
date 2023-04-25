@@ -18,7 +18,7 @@ var (
 // db connection
 var dataSourceName = fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=%s", dbHost, dbPort, dbUser, dbPassword, dbName, sslMode)
 
-func ConnectDB() *sql.DB {
+func ConnectDB() (*sql.DB, error) {
 	db, err := sql.Open("postgres", dataSourceName)
 	if err != nil {
 		panic(err)
@@ -30,5 +30,5 @@ func ConnectDB() *sql.DB {
 	} else {
 		fmt.Println("Successfully connected")
 	}
-	return db
+	return db, nil
 }
