@@ -16,16 +16,17 @@ import (
 
 // config db
 var (
-	dbHost = utils.DotEnv("DB_HOST")
-	dbPort = utils.DotEnv("DB_PORT")
-	dbUser = utils.DotEnv("DB_USER")
+	dbHost     = utils.DotEnv("DB_HOST")
+	dbPort     = utils.DotEnv("DB_PORT")
+	dbUser     = utils.DotEnv("DB_USER")
 	dbPassword = utils.DotEnv("DB_PASSWORD")
-	dbName = utils.DotEnv("DB_NAME")
-	sslMode = utils.DotEnv("SSL_MODE")
+	dbName     = utils.DotEnv("DB_NAME")
+	sslMode    = utils.DotEnv("SSL_MODE")
 )
 
 // db connection
 var dataSourceName = fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=%s", dbHost, dbPort, dbUser, dbPassword, dbName, sslMode)
+
 // db, err := sql.Open("postgres", dataSourceName)
 
 // koneksi database ================================================================================
